@@ -5,14 +5,15 @@ pipeline {
   stages {
     stage ('Clone Repo'){
       steps {
-        git '#'
+        git 'https://github.com/anye-web/backrose.git'
       }
     }
 
-    stage ('Build Docker Image')
-    {
-      script{
+    stage ('Build Docker Image'){
+      steps{
+        script{
         sh 'docker build -t backrose-app .'
+      }
       }
     }
 
@@ -34,7 +35,10 @@ pipeline {
       }
     }
 
-    post{
+   
+  }
+
+   post{
       success{
         echo 'Deployment Successful'
       }
@@ -42,5 +46,4 @@ pipeline {
         echo 'Deployment Failed'
       }
     }
-  }
 }
