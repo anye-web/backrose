@@ -1,6 +1,8 @@
 # Use node Image to build the react app
 FROM node:18-alpine AS builder
 WORKDIR /app
+COPY public/ public/
+COPY src/ src/
 COPY package.json package-lock.json ./
 RUN npm install
 RUN npm run build
