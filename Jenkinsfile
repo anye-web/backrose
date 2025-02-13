@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage ('Clone Repo'){
       steps {
-        git '#'
+        git 'https://github.com/anye-web/backrose.git'
       }
     }
 
