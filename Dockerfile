@@ -3,7 +3,7 @@ FROM node:18-alpine AS builder
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
-RUN npm build
+RUN npm run build
 
 # Use Nginx to serve the app
 FROM nginx:alpine
