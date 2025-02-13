@@ -1,8 +1,8 @@
 # Use node Image to build the react app
 FROM node:18-alpine AS builder
 WORKDIR /app
+RUN npm install
 COPY package.json package-lock.json ./
-RUN npm run install
 
 # Use Nginx to serve the app
 FROM nginx:alpine
