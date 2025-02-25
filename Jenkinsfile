@@ -52,7 +52,7 @@ pipeline {
                     sh "docker pull ${IMAGE_TAG}"
                     
                     // Run the container on port 45
-                    sh "docker run -d -p 45:45 --name ${REPO_NAME} ${IMAGE_TAG}"
+                    sh "docker run -d -p 80:80 --name ${REPO_NAME} ${IMAGE_TAG}"
                 }
             }
         }
